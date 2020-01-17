@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Announcements}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Buy Minecraft!}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Project 0}{4}{0}{1}
+\beamer@sectionintoc {2}{About the Course}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Instructors}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{What to Expect}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{What to Get Familiar With}{10}{0}{2}
