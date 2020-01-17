@@ -1,0 +1,569 @@
+\documentclass{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{spruce}
+\usepackage{circuitikz}
+
+\title{Logic Gates}
+\subtitle{The Building Blocks of Digital Logic in Redstone}
+\author[A Praveen \& A Krishnan]{Akilesh Praveen \& Ashwath Krishnan}
+\institute{UMD}
+\date{\today}
+
+\begin{document}
+
+    % title page
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    
+    % table of contents
+    \begin{frame}
+        \frametitle{Agenda}
+        \tableofcontents
+    \end{frame}
+    
+    \section{Announcements}
+    
+        \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Announcements\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+        \subsection{Project 1}
+        
+            
+            
+            \begin{frame}
+                \frametitle{Project 1}
+                \begin{itemize}
+                    \item Project 1 has been released, and can be found on the course website under 'Week 2' on the calendar.
+                    \item Everything you need to complete the project will be covered in today's lecture, with optional supplementary material provided on the course website under Week 2's resources section.
+                \end{itemize}
+            \end{frame}
+        
+            
+    \section{Logic Gates}
+        \subsection{Inputs \& Outputs}
+        
+            \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Inputs and Outputs\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+        
+        
+            \begin{frame}
+                \frametitle{Inputs \& Outputs}
+                \begin{itemize}
+                    \item The Basic Logic Gates make up all of our circuits
+                    \item More advanced gates are simply just combinations of the four types of basic gates
+                    \item The gates all take two inputs, and produce one output (with an exception of \texttt{Not}, which only takes one input)
+                \end{itemize}
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{Inputs \& Outputs in Redstone}
+                \begin{itemize}
+                    \item Logic Gates are the absolute most basic constructs of the redstone circuits we will be building in this class
+                    \item Let's try and represent them using the redstone mechanics available to us
+                    \item Remember: we have torches, wires, and repeaters
+                \end{itemize}
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{Inputs \& Outputs in Redstone}
+                \begin{itemize}
+                    \item How can we take our understanding of this and translate it into Redstone?
+                    \item Let's go step by step and draw some comparisons
+                    \item First, let's handle the input and output for our logic gates
+                    \begin{itemize}
+                        \item Input for a logic gate is composed of 1 or 2 True or False values in discrete math, so let's call it 1 or 2 redstone wires carrying either current or no current
+                        \item Output for a logic gate is a True or False value in discrete math, so let's say our output value can be represented by a redstone wire carrying either current or no current
+                    \end{itemize}
+                    \item Think about what else you'd need to create these gates in Minecraft while we review them
+                \end{itemize}
+            \end{frame}
+            
+        \subsection{The Basic Gates}
+        
+        
+            
+            \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}The Basic Gates\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+            
+        
+            \begin{frame}
+                \frametitle{Not}
+                \begin{itemize}
+                    \item This gate is not not not not not not one of the most useful logic gates!
+                    \item Note that this is the only gate with one input
+                    \item Often used in conjunction with other gates to produce a 'not' version of that gate (e.g. \texttt{AND} and \texttt{NAND})
+                    \item To produce this gate in Minecraft, we have to make use of a special redstone mechanic involving torches\newline
+                \end{itemize}
+                
+                
+                % the following section is the logic gate in circuitikz and the truth table
+                
+                \centering
+                
+                \begin{columns}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[not port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.5\textwidth}
+                    
+                    
+                    
+                    \begin{tabular}{ |p{1cm}||p{1cm}|}
+                     \hline
+                     \multicolumn{2}{|c|}{Not} \\
+                     \hline
+                     In & Out\\
+                     \hline
+                     T & F\\
+                     F & T\\
+                     \hline
+                    \end{tabular}
+                    
+                \end{columns}
+                
+            \end{frame}
+            
+            
+            \begin{frame}
+                \frametitle{And \& its evil twin, Nand}
+                \begin{itemize}
+                    \item Best way to think of this is to think of the equivalent in English
+                    \item If input \texttt{a} AND input \texttt{b} are true, produce a true output 
+                    \item Placing a \texttt{NOT} gate after an \texttt{AND} gate results in a \texttt{NAND} gate
+                    \item We are explicitly mentioning the \texttt{NAND} gate for a reason, and we will return to this idea later\newline
+                \end{itemize}
+                
+                
+                % the following section is the logic gate in circuitikz and the truth table
+                
+                \centering
+                
+                \begin{columns}
+                    
+                    \column{0.25\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[and port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.25\textwidth}
+                    
+                    
+                    
+                    \begin{tabular}{ |p{1cm}||p{1cm}|}
+                     \hline
+                     \multicolumn{2}{|c|}{And} \\
+                     \hline
+                     In & Out\\
+                     \hline
+                     T F & F\\
+                     F T & F\\
+                     T T & T\\
+                     F F & F\\
+                     \hline
+                    \end{tabular}
+                    
+                    \column{0.25\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[nand port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.25\textwidth}
+                    \centering
+                    
+                    \begin{tabular}{ |p{1cm}||p{1cm}|}
+                     \hline
+                     \multicolumn{2}{|c|}{Nand} \\
+                     \hline
+                     In & Out\\
+                     \hline
+                     T F & T\\
+                     F T & T\\
+                     T T & F\\
+                     F F & T\\
+                     \hline
+                    \end{tabular}
+                    
+                \end{columns}
+                
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{Or \& its evil twin, Nor}
+                \begin{itemize}
+                    \item Very similar to \texttt{AND} in that the English word defines its behavior exactly
+                    \item If input \texttt{a} OR input \texttt{b} are true (or both), produce a true output 
+                    \item Placing a \texttt{NOT} gate after an \texttt{OR} gate results in a \texttt{NOR} gate\newline
+                \end{itemize}
+                
+                
+                % the following section is the logic gate in circuitikz and the truth table
+                
+                \centering
+                
+                \begin{columns}
+                    
+                    \column{0.25\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[or port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.25\textwidth}
+                    
+                    
+                    
+                    \begin{tabular}{ |p{1cm}||p{1cm}|}
+                     \hline
+                     \multicolumn{2}{|c|}{Or} \\
+                     \hline
+                     In & Out\\
+                     \hline
+                     T F & T\\
+                     F T & T\\
+                     T T & T\\
+                     F F & F\\
+                     \hline
+                    \end{tabular}
+                    
+                    \column{0.25\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[nor port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.25\textwidth}
+                    \centering
+                    
+                    \begin{tabular}{ |p{1cm}||p{1cm}|}
+                     \hline
+                     \multicolumn{2}{|c|}{Nor} \\
+                     \hline
+                     In & Out\\
+                     \hline
+                     T F & F\\
+                     F T & F\\
+                     T T & F\\
+                     F F & T\\
+                     \hline
+                    \end{tabular}
+                    
+                \end{columns}
+                
+            \end{frame}
+            
+            
+            \begin{frame}
+                \frametitle{Xor, the Unique Gate}
+                \begin{itemize}
+                    \item The \texttt{XOR} gate's name an abbreviated form of 'exclusive or'
+                    \item An easy way to think about this is: If both inputs are unique, this gate produces \texttt{TRUE}. Otherwise, it produces \texttt{FALSE} 
+                    \item The logical complement of the \texttt{XOR} gate is the \texttt{XNOR} gate, which has the opposite truth table.
+                    \item For simplicity's sake, we won't focus heavily on \texttt{XNOR} for now.\newline
+                \end{itemize}
+                
+                
+                % the following section is the logic gate in circuitikz and the truth table
+                
+                \centering
+                
+                \begin{columns}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[xor port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.5\textwidth}
+                    
+                    
+                    
+                    \begin{tabular}{ |p{1cm}||p{1cm}|}
+                     \hline
+                     \multicolumn{2}{|c|}{Xor} \\
+                     \hline
+                     In & Out\\
+                     \hline
+                     T F & T\\
+                     F T & T\\
+                     T T & T\\
+                     F F & F\\
+                     \hline
+                    \end{tabular}
+                    
+                    
+                    
+                \end{columns}
+                
+            \end{frame}
+            
+             \begin{frame}
+                \frametitle{Logical Complements}
+                \begin{itemize}
+                    \item Let's talk about logical complements- you've just seen a few
+                    \item Occasionally, we'll have a gate or circuit that produces the exact opposite of what we want
+                        \begin{itemize}
+                            \item I'm saying 'circuit' for a reason
+                        \end{itemize}
+                    \item In this case, you'll want the logical complement of whatever gate/circuit you've got
+                    \item When drawing circuit diagrams, using the 'dot' notation is sometimes less cumbersome than just sprinkling \texttt{NOT} gates everywhere
+                \end{itemize}
+               
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{A Small Exercise}
+                \begin{itemize}
+                    \item Most of you have taken/are taking 250, so let's make your TAs proud!
+                    \item Try to construct an \texttt{XOR} gate using only \texttt{OR}s, \texttt{AND}s, and \texttt{NOT}s
+                        \begin{itemize}
+                            \item Try to be as efficient as possible- circuits had to be made by hand in the old days, and every piece had a cost associated with it!
+                            \item It's also worth noting that more gates = more build time in Minecraft, so it's good to learn to think efficiently in this class
+                        \end{itemize}
+                    \item Why is this important?
+                \end{itemize}
+               
+            \end{frame}
+            
+            
+        \subsection{Applications in Computing}
+        
+            \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Applications in Computing\par%
+                \end{beamercolorbox}
+                \vfill
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{The \texttt{NAND} Gate's Importance}
+                \begin{itemize}
+                    \item Let's talk about the \texttt{NAND} Gate
+                    \item Why are they the most commonly found gates in computers?
+                    \item A Few Reasons
+                    \begin{itemize}
+                        \item \texttt{NAND} is what we call '\textbf{functionally complete}'. (So is the \texttt{NOR} gate)
+                        \item If a gate is \textbf{functionally complete}, all other gates can be constructed from it
+                        \item in CMOS, (a common circuit fabrication process), \texttt{NAND} is smaller and faster than a \texttt{NOR} gate
+                    \end{itemize}
+                    \item TL;DR - Due to already set industry precedents and the initial ease to manufacture them, \texttt{NAND} gates were the pick over \texttt{NOR} gates for the universal gate that engineers used to build other gates, and eventually other circuits out of.
+                \end{itemize}
+               
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{The \texttt{NAND} Gate's Importance (cont'd)}
+                \begin{itemize}
+                    \item It turns out, we are able to create a \texttt{NAND} gate in Minecraft.
+                    \item Because of this, we can conclude that we can create a \textbf{functionally complete} gate in Minecraft.
+                    \item Therefore, we have proven that we can implement all digital logic in Minecraft.
+                    \item Does this mean we will build everything in terms of NAND gates in Minecraft?
+                    \begin{itemize}
+                        \item Absolutely not. Transistors and hardware are one thing in real life, but very different in Minecraft. There are better, easier ways to make gates in Minecraft.
+                        \item In this course, it's important to make note of the few, but key differences between hardware in real life and hardware in game
+                    \end{itemize}
+                \end{itemize}
+               
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{The \texttt{NAND} Gate's Importance (cont'd)}
+                \begin{itemize}
+                    \item Let's reinforce the idea of functional completeness
+                    \item For example, here's how we can make the \texttt{NOT} gate using only \texttt{NAND} gates.
+                    \item This actually turns out to be the simplest of all once we give it a try. \newline
+                \end{itemize}
+                
+                \begin{columns}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[not port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                    
+                    \begin{circuitikz} \draw
+                    node[nand port]{};
+                    \end{circuitikz}
+                    
+                    
+                \end{columns}
+                
+               
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{The \texttt{NAND} Gate's Importance (cont'd)}
+                \begin{itemize}
+                    \item What about the \texttt{AND} gate?
+                    \item Try constructing an \texttt{AND} gate using only \texttt{NAND} gates. 
+                    \item Remember, you want to think of it more like a circuit- ask yourself: How can I produce a circuit that takes input and produces output identical to a single \texttt{AND} gate using only \texttt{NAND} gates? \newline
+                \end{itemize}
+                
+                \begin{columns}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[and port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                    
+                    \begin{circuitikz} \draw
+                    
+                    (0,0) node[nand port] (mynand1) {}
+                    (2,0) node[nand port] (mynand2) {}
+                    (mynand1.out) -| (mynand2.in 1)
+                    (mynand1.out) -| (mynand2.in 2);
+                    \end{circuitikz}
+                    
+                    
+                \end{columns}
+                
+               
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{The \texttt{NAND} Gate's Importance (cont'd)}
+                \begin{itemize}
+                    \item And the \texttt{OR} gate?
+                    \item Try constructing an \texttt{OR} gate using only \texttt{NAND} gates. 
+                    \item Again, think of it like a circuit. Given limited tools, try and solve the boolean equation that we've posed for you. \newline
+                \end{itemize}
+                
+                \begin{columns}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[or port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.5\textwidth}
+                    
+                    \centering
+                    
+                    \begin{circuitikz} \draw
+                    (0,2) node[nand port] (mynand0) {}
+                    (0,0) node[nand port] (mynand1) {}
+                    (2,1) node[nand port] (mynand2) {}
+                    (mynand0.out) -| (mynand2.in 1)
+                    (mynand1.out) -| (mynand2.in 2);
+                    \end{circuitikz}
+                    
+                    
+                \end{columns}
+                
+               
+            \end{frame}
+            
+            \begin{frame}
+                \frametitle{The \texttt{NAND} Gate's Importance (cont'd)}
+                \begin{itemize}
+                    \item Finally, let's try the \texttt{XOR} gate
+                    \item Try constructing an \texttt{XOR} gate using only \texttt{NAND} gates. 
+                    \item This one's a little tougher- try and get creative, or just wait for us to reveal the solution. \newline
+                \end{itemize}
+                
+                \begin{columns}
+                    
+                    \column{0.4\textwidth}
+                    
+                    \centering
+                
+                    \begin{circuitikz} \draw
+                    node[or port]{};
+                    \end{circuitikz}
+                    
+                    \column{0.6\textwidth}
+                    
+                    \centering
+                    
+                    \begin{circuitikz} \draw
+                    (0,1) node[nand port] (mynand4) {}
+                    (2,2) node[nand port] (mynand0) {}
+                    (2,0) node[nand port] (mynand1) {}
+                    (4,1) node[nand port] (mynand2) {}
+                    (4.5,1) node[] (c) {OUT}
+                    (-2, 2.5) node[](a) {A}
+                    (-2,-0.5) node[](b) {B}
+                    (a) -| (mynand4.in 1)
+                    (a) -| (mynand0.in 1)
+                    (b) -| (mynand4.in 2)
+                    (b) -| (mynand0.in 2)
+                    (mynand4.out) -| (mynand1.in 1)
+                    (mynand4.out) -| (mynand0.in 2)
+                    (mynand0.out) -| (mynand2.in 1)
+                    (mynand1.out) -| (mynand2.in 2);
+                    \end{circuitikz}
+                    
+                    
+                \end{columns}
+                
+               
+            \end{frame}
+            
+            
+            
+            
+            
+            
+    \section{About the Course}
+    
+            
+            
+    
+    
+\end{document}
