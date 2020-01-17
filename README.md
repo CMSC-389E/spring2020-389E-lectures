@@ -1,2 +1,2 @@
-# spring2020-389E-lectures
-Repository of lectures (TeX and PDF) I'm creating for CMSC389E in the Spring 2020 semester. Created for students. Content adapted from Alexander Brassel's CMSC389E curriculum.
+# CMSC389E Spring 2020 Lectures
+Available in TeX form and PDF form for general download and distribution. Presentations created by Akilesh Praveen, adapted from Alexander Brassel's 389E curriculum.
