@@ -420,7 +420,9 @@
                     \centering
                 
                     \begin{circuitikz} \draw
-                    node[not port]{};
+                    (1,1) node[](a) {A}
+                    (3.25,1) node[](out) {OUT}
+                    (2,1) node[not port](mynot){};
                     \end{circuitikz}
                     
                     \column{0.5\textwidth}
@@ -428,7 +430,12 @@
                     \centering
                     
                     \begin{circuitikz} \draw
-                    node[nand port]{};
+                    (0,1.5) node[](a) {A}
+					(0,0.5) node[](a2) {A}                  
+                    (2,1) node[nand port] (mynand){}
+                    (2.75,1) node[] (c) {OUT}
+                    (a) -| (mynand.in 1)
+                    (a2) -| (mynand.in 2);
                     \end{circuitikz}
                     
                     
@@ -452,7 +459,12 @@
                     \centering
                 
                     \begin{circuitikz} \draw
-                    node[and port]{};
+                    (0,1.5) node[](a) {A}
+					(0,0.5) node[](b) {B}                  
+                    (2,1) node[and port] (myand){}
+                    (2.75,1) node[] (c) {OUT}
+                    (a) -| (myand.in 1)
+                    (b) -| (myand.in 2);
                     \end{circuitikz}
                     
                     \column{0.5\textwidth}
@@ -460,7 +472,9 @@
                     \centering
                     
                     \begin{circuitikz} \draw
-                    
+                    (-1.75,0.25) node[](a) {A}
+					(-1.75,-0.25) node[](b) {B}
+					(2.75,0) node[] (c) {OUT}
                     (0,0) node[nand port] (mynand1) {}
                     (2,0) node[nand port] (mynand2) {}
                     (mynand1.out) -| (mynand2.in 1)
@@ -488,7 +502,12 @@
                     \centering
                 
                     \begin{circuitikz} \draw
-                    node[or port]{};
+                    (0,1.5) node[](a) {A}
+					(0,0.5) node[](b) {B}                  
+                    (2,1) node[or port] (myor){}
+                    (2.75,1) node[] (c) {OUT}
+                    (a) -| (myor.in 1)
+                    (b) -| (myor.in 2);
                     \end{circuitikz}
                     
                     \column{0.5\textwidth}
@@ -496,9 +515,17 @@
                     \centering
                     
                     \begin{circuitikz} \draw
-                    (0,2) node[nand port] (mynand0) {}
-                    (0,0) node[nand port] (mynand1) {}
+                    (-1.5,0) node[](b) {B}
+                    (-1.5,2) node[](a) {A}
+                    (2.75,1) node[](out) {OUT}
+                    (0.5,2) node[nand port] (mynand0) {}
+                    (0.5,0) node[nand port] (mynand1) {}
                     (2,1) node[nand port] (mynand2) {}
+                    (b) -| (mynand1.in 1)
+                    (b) -| (mynand1.in 2)
+                    (a) -| (mynand0.in 1)
+                    (a) -| (mynand0.in 2)
+                    
                     (mynand0.out) -| (mynand2.in 1)
                     (mynand1.out) -| (mynand2.in 2);
                     \end{circuitikz}
@@ -519,15 +546,20 @@
                 
                 \begin{columns}
                     
-                    \column{0.4\textwidth}
+                    \column{0.35\textwidth}
                     
                     \centering
                 
                     \begin{circuitikz} \draw
-                    node[or port]{};
+					(0,1.5) node[](a) {A}
+					(0,0.5) node[](b) {B}                  
+                    (2,1) node[xor port] (myxor){}
+                    (2.75,1) node[] (c) {OUT}
+                    (a) -| (myxor.in 1)
+                    (b) -| (myxor.in 2);
                     \end{circuitikz}
                     
-                    \column{0.6\textwidth}
+                    \column{0.65\textwidth}
                     
                     \centering
                     
@@ -536,7 +568,7 @@
                     (2,2) node[nand port] (mynand0) {}
                     (2,0) node[nand port] (mynand1) {}
                     (4,1) node[nand port] (mynand2) {}
-                    (4.5,1) node[] (c) {OUT}
+                    (4.75,1) node[] (c) {OUT}
                     (-2, 2.5) node[](a) {A}
                     (-2,-0.5) node[](b) {B}
                     (a) -| (mynand4.in 1)
@@ -560,9 +592,123 @@
             
             
             
-    \section{About the Course}
+    \section{Note on Logic Rules / Efficiency}
     
+    	 \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Logic Rules \& Efficiency\par%
+                \end{beamercolorbox}
+            \vfill
+         \end{frame}
+    
+    	\begin{frame}
+                \frametitle{Logic Rules: In Review}
+                \begin{itemize}
+                    \item When discussing boolean logic, we can't forget about the basic rules, or equivalencies, that come along with it.
+                    \item Refer to this handy cheatsheet: \href{http://www.cs.umd.edu/class/spring2019/cmsc250-020X/files/logic-laws.pdf}{\beamergotobutton{CMSC250 Equivalency Reference Sheet}}
+                    \item These rules exist to help us simplify circuits (predicates) that are otherwise more cumbersome to deal with. (In our case, to implement in hardware/Minecraft)
+                    \item When designing logical circuits, you will find it \textbf{infinitely} more easy if you consistently keep these rules in mind.
+                \end{itemize}
+            \end{frame}
             
+            
+         \begin{frame}
+         	\frametitle{An Example}
+         	\begin{itemize}
+         		\item Here's a simple example of how using these logic rules can help us 'simplify' a circuit while retaining the same functionality
+         		\item Let's say we have the given circuit. How would we systematically look at simplifying this?
+         		
+         	\end{itemize}
+         	
+         	\centering
+                    
+                    \begin{circuitikz} \draw
+                    
+                    (-2, 2.5) node[](a) {A}
+                    (-2, 1.5) node[](b1) {B}
+                    (-2, 0.5) node[](b2) {B}
+                    (-2,-0.5) node[](c) {C}
+                    (0,0) node[and port] (myand1) {}
+                    (0,2) node[and port] (myand2) {}
+                    (2,1) node[or port] (myor1) {}
+                    (2.75,1) node[] (out) {OUT}
+                    (a) -| (myand2.in 1)
+                    (b1) -| (myand2.in 2)
+                    (b2) -| (myand1.in 1)
+                    (c) -| (myand1.in 2)
+                    (myand2.out) -| (myor1.in 1)
+                    (myand1.out) -| (myor1.in 2);
+                    \end{circuitikz}
+         \end{frame}
+         
+         \begin{frame}
+         	\frametitle{An Example (cont'd)}
+			
+			\centering
+			\begin{circuitikz} \draw
+                    
+                    (-2, 2.5) node[](a) {A}
+                    (-2, 1.5) node[](b1) {B}
+                    (-2, 0.5) node[](b2) {B}
+                    (-2,-0.5) node[](c) {C}
+                    (0,0) node[and port] (myand1) {}
+                    (0,2) node[and port] (myand2) {}
+                    (2,1) node[or port] (myor1) {}
+                    (2.75,1) node[] (out) {OUT}
+                    (a) -| (myand2.in 1)
+                    (b1) -| (myand2.in 2)
+                    (b2) -| (myand1.in 1)
+                    (c) -| (myand1.in 2)
+                    (myand2.out) -| (myor1.in 1)
+                    (myand1.out) -| (myor1.in 2);
+                    \end{circuitikz}         	
+         	
+         	\begin{itemize}
+         		\item Let's take a look at the logical rules presented to us.
+         		\item \href{http://www.cs.umd.edu/class/spring2019/cmsc250-020X/files/logic-laws.pdf}{\beamergotobutton{CMSC250 Equivalency Reference Sheet}}
+         		\item Tip: Write out the boolean logic equivalent of this circuit.
+         		\item $ ( A \land B ) \lor (B \land C) $
+         		\item Look familiar? Which rule can we apply to simplify our circuit?
+         	\end{itemize}
+         \end{frame}
+            
+         \begin{frame}
+         	\frametitle{An Example (cont'd)}
+         	
+         	\begin{itemize}
+         		\item After applying the distributive law, we can see that our previous statement simplifies to $ B \land (A \lor C) $
+         		\item As a result, we can represent it as a simpler logical circuit, as you'll see below.
+         		
+         	\end{itemize}
+         	
+         	\centering
+			\begin{circuitikz} \draw
+                    
+                    (-2, 2.5) node[](a) {A}
+                    (-2, 1.5) node[](c) {C}
+                    (-2, 0.5) node[](b1) {B}
+                    
+                    (0,2) node[or port] (myor) {}
+                    (2,1) node[and port] (myor1) {}
+                    (2.75,1) node[] (out) {OUT}
+                    (a) -| (myor.in 1)
+                    (c) -| (myor.in 2)
+                    (myor.out) -| (myor1.in 1)
+                    (b1) -| (myor1.in 2);
+                    \end{circuitikz}       
+         	
+         \end{frame}
+         
+         \begin{frame}
+         	\frametitle{Why learn this? (Takeaways)}
+         	\begin{itemize}
+         		\item Knowing the basics of boolean logic opens the doors for us to make more advanced circuits than just simple truth table representations.
+         		\item Understanding \texttt{NAND} gates and \texttt{NOR} gates and functional completeness provides us with some background knowledge of digital logic design \& doubles as an excellent learning tool for circuit construction.
+         		\item Boolean logic rules are essential to designing circuits in the most efficient way possible, saving time, money, and materials in the real world, and saving us from carpal tunnel in Minecraft.
+         	\end{itemize}
+         \end{frame}
             
     
     
