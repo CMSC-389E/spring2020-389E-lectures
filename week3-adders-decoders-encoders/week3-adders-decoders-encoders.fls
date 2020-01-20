@@ -283,9 +283,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex
-INPUT /usr/share/texlive/texmf-dist/tex/generic/xlop/xlop.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/xlop/xlop.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/xlop/xlop.tex
 INPUT week3-adders-decoders-encoders.aux
 INPUT week3-adders-decoders-encoders.aux
 OUTPUT week3-adders-decoders-encoders.aux
@@ -374,6 +371,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT 4bitadder.png
+INPUT ./4bitadder.png
+INPUT ./4bitadder.png
 OUTPUT week3-adders-decoders-encoders.nav
 OUTPUT week3-adders-decoders-encoders.toc
 OUTPUT week3-adders-decoders-encoders.snm
@@ -385,5 +385,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb

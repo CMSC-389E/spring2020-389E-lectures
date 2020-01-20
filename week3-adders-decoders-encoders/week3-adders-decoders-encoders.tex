@@ -2,13 +2,15 @@
 \usetheme{AnnArbor}
 \usecolortheme{spruce}
 \usepackage{circuitikz}
-\usepackage{xlop}
+\usepackage{graphicx}
 
 \title{Adders, Encoders, and Decoders}
 \subtitle{More sophisticated applications of circuits}
 \author[A Praveen \& A Krishnan]{Akilesh Praveen \& Ashwath Krishnan}
 \institute{UMD}
 \date{\today}
+
+
 
 \begin{document}
 
@@ -273,20 +275,87 @@
 			\begin{circuitikz} \draw
 			(0,1.5) node[] (a) {A}
 			(0,0) node[] (b) {B}
-			(0,-1.5) node[] (c) {C}
+			(0,-1.5) node[] (c) {$C_{in}$}
+			(8.25,0) node[] (sum) {SUM}
+			(10.35,-3.28) node[] (cout) {$C_{out}$}
+			
+			(2.25,0.75) node[] (ha1) {HA}
+			(6.25,-0.75) node[] (ha2) {HA}
 
 			(1.25, 1.75) -- (1.25, -0.25) -- (3.25, -0.25) -- (3.25, 1.75) -- (1.25, 1.75)
 			
 			(0.25, 1.5) -- (1.25, 1.5)
 			(0.25, 0) -- (1.25, 0) 
 
-			(3.25, 1.5) -- (4, 1.5)	
-			(3.25, 0) -- (4, 0)		
+			(3.25, 1.5) -- (4.5, 1.5)
+			(4.5,1.5) -- (4.5,0)
+			(4.5,0) -- (5.25,0)
 			
-			(0.25, -1.5) -- (2.5, -1.5)
+			(5.25,0.25) -- (7.25,0.25) -- (7.25,-1.75) -- (5.25, -1.75) -- (5.25,0.25) 
+				
+			(3.25, 0) -- (4, 0)
+			(4,0) -- (4,-3.56)
+			(4,-3.56)--(8.5,-3.56)	
+			(9.75,-3.28) node[or port] (myor) {}	
+			
+			(0.25, -1.5) -- (3.8, -1.5)
+			(3.8, -1.5) -- (3.8, -1.3)
+			(3.8, -1.3) -- (4.2, -1.3)
+			(4.2, -1.3) -- (4.2, -1.5)
+			(4.2, -1.5) -- (5.25, -1.5)
+			
+			(7.25,0) -- (7.75, 0)
+			(7.25,-1.5) -- (8.4, -1.5)
+			(8.4, -1.5) -- (8.4, -3)
+			
 			;
 			\end{circuitikz}
 		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Full Adders}
+			\begin{itemize}
+				\item If full adders are better than half adders, why do we use them?
+				\item During addition of any size, you may notice that there is always one addition 'operation' that will never have a 'carry in'
+				\begin{itemize}
+					\item This will always occur in the least significant bit
+				\end{itemize}
+				\item Since a half adder is fundamentally simpler than a full adder, we always use it when we can
+				\item Now that we have the ability to add two one bit numbers, with or without a carried '1' coming into the addition, let's put these together (literally) and create a multiple digit adder.
+			\end{itemize}
+		\end{frame}
+		
+		
+		\begin{frame}
+			\frametitle{Full Adders}
+			\begin{itemize}
+				\item Here's an example of how we can chain adders to increase the number of bits that we can perform addition with
+				\item Note that the Full Adder handling \texttt{A0} and \texttt{B0} can be replaced with a Half Adder\linebreak
+			\end{itemize}
+			
+			
+			
+			\centering
+			
+			\includegraphics[width=0.8\textwidth]{4bitadder}
+			
+			\centering
+			{\tiny Image courtesy of IIT}
+			
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Full Adders}
+			
+			\begin{itemize}
+				\item Okay, now we can add simple n-bit numbers. But then how can computers show us numbers that aren't in binary?
+				\item We need a way to translate these binary signals into numbers that we can use (or that a computer can display for us)
+				\item In other words, we need to somehow convert the outputs to base-10
+			\end{itemize}
+			
+		\end{frame}
+		
+		
     
     
 \end{document}
