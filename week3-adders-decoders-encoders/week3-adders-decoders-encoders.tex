@@ -1,0 +1,257 @@
+\documentclass{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{spruce}
+\usepackage{circuitikz}
+\usepackage{xlop}
+
+\title{Adders, Encoders, and Decoders}
+\subtitle{More sophisticated applications of circuits}
+\author[A Praveen \& A Krishnan]{Akilesh Praveen \& Ashwath Krishnan}
+\institute{UMD}
+\date{\today}
+
+\begin{document}
+
+    % title page
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    
+    % table of contents
+    \begin{frame}
+        \frametitle{Agenda}
+        \tableofcontents
+    \end{frame}
+    
+    \section{Announcements}
+    
+        \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Announcements\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+        \subsection{Project 2}
+        
+            
+            
+            \begin{frame}
+                \frametitle{Project 2}
+                \begin{itemize}
+                    \item Project 2 has been released, and can be found on the course website under 'Week 3' on the calendar.
+                    \item Everything you need to complete the project will be covered in today's lecture, with optional supplementary material provided on the course website under Week 3's resources section.
+                    
+                \end{itemize}
+            \end{frame}
+            
+            \begin{frame}
+            	\frametitle{Some Reminders}
+            	\begin{itemize}
+            		\item As the projects become more involved, we'd like to remind you to reach out and attend office hours if you are struggling.
+                    \item Additionally, here's a reminder that all projects can be group projects, but you'll have to let us know \textbf{4 days} prior to the project's due date if you'll be working in a group. (Max size of 3)
+            	\end{itemize}
+            	
+            \end{frame}
+        
+    \section{Adders}
+    
+    	\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Adders\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+    	\subsection{Addition}
+    
+    	\begin{frame}
+    		\frametitle{Addition}
+    		\begin{center}
+    			{\Large How would you add the following binary numbers?}
+    			\linebreak
+    			{\Large \texttt{11101} \& \texttt{11011}}
+    		\end{center}
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{Addition}
+    		\begin{itemize}
+    			\item Let's visualize the computation as long addition
+    			\item How would you go about solving it this way?
+			\end{itemize}
+			
+			\centering
+			{\LARGE
+			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
+					   & 1 & 1 & 1 & 0 & 1 \\
+					 + & 1 & 1 & 0 & 1 & 1 \\
+					\hline
+					
+			\end{tabular}}
+		\end{frame}
+		
+		\begin{frame}
+    		\frametitle{Addition}
+    		\begin{itemize}
+    			\item Let's visualize the computation as long addition
+    			\item How would you go about solving it this way?
+			\end{itemize}
+			
+			\centering
+			{\LARGE
+			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
+					   &   &   &   & {\color{red}1} &   \\
+					   & 1 & 1 & 1 & 0 & 1 \\
+					 + & 1 & 1 & 0 & 1 & 1 \\
+					\hline
+					   &   &   &   &   & 0
+					
+			\end{tabular}}
+			
+			\begin{itemize}
+				\item This phenomenon is known as a {\color{red}carry}
+				\item This occurs when the numbers we are adding exceed the limit imposed by the number system we are using
+				\item Where else during this computation would this phenomenon occur?
+			\end{itemize}
+		\end{frame}	
+		
+		\subsection{Half Adders}
+		
+		\begin{frame}
+			\frametitle{Half Adders}
+			\begin{itemize}
+				\item First, let's represent the \texttt{1}s as \texttt{TRUE}s and the \texttt{0}s as \texttt{FALSE}s
+				\item Think back to last week when we talked about designing circuits that dealt with booleans
+				\item The big question: can we perform the addition process that we just talked about using such gates?
+				\item The answer: \textbf{absolutely}
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Half Adders}
+			\begin{itemize}
+				\item Let's take this step by step.
+				\item Looking at the addition example, what's the simplest operation we can take away from that?
+				\item Let's see if we can build something that can take two one-bit numbers and add them, producing a carry if applicable
+				\begin{itemize}
+					\item In terms of inputs, we will need two booleans
+					\item In terms of outputs, we will need two booleans (one for our sum, and one for the carry)
+				\end{itemize}
+				\item Incidentally, we have been describing a \textbf{Half Adder}
+				\item We have defined our inputs and outputs- try to design a Half Adder using the gates we've learned
+			\end{itemize}
+			
+				
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Half Adders}
+			\begin{itemize}
+				\item Below is the formal truth table and circuit diagram for an optimal Half-Adder
+				\item In this case, we can see that the Sum and Carry can be represented by an \texttt{XOR} and \texttt{AND} gate, respectively \linebreak
+			\end{itemize}
+			\centering
+			\begin{columns}
+				\column{0.5\textwidth}
+					\centering
+					\begin{tabular}{ |p{0.75cm}||p{0.75cm}||p{0.75cm}|}
+                    	 \hline
+                     	\multicolumn{3}{|c|}{Half Adder} \\
+                     	\hline
+                     	In & Sum & Carry\\
+                     	\hline
+                     	0 0 & 0 & 0\\
+                     	0 1 & 1 & 0\\
+                     	1 0 & 1 & 0\\
+                     	1 1 & 0 & 1\\
+                    	 \hline
+                	\end{tabular}
+				
+				\column{0.5\textwidth}
+					\centering
+					
+					% HALF ADDER
+					
+					\begin{circuitikz} \draw
+                    (-1.5,2.22) node[](b) {B}
+                    (-1.5,2.78) node[](a) {A}
+                    
+                    (1.5,2.5) node[xor port] (myxor) {}
+                    (1.5,1) node[and port] (myand) {}
+                    
+                    (-0.25,2.78) node[circ] (circ1) {}
+                    (-0.5,2.22) node[circ] (circ2) {}
+                    
+                    (2.25,2.5) node[] (S) {SUM}
+                    (2.35, 1) node[] (C) {CARRY}
+                    
+                    
+                    (a) -| (myxor.in 1) 
+                    (a) -| (circ1) 
+                    (b) -| (myxor.in 2)
+                    (b) -| (circ2)
+                    (-0.25,2.78) -- (-0.25,1.28) -- (0.25,1.28)
+                    (-0.5,2.22) -- (-0.5,0.72) -- (0.25,0.72);
+                    
+                    \end{circuitikz}
+				
+				
+			\end{columns}
+		\end{frame}
+
+		\subsection{Full Adders}	
+		
+		\begin{frame}
+			\frametitle{Full Adders}
+			\begin{itemize}
+				\item The Half Adder is great, but limited in functionality
+				\item Let's work on 'scaling' it for use with multi-digit addition.
+				\item How do we accomplish such a task?
+				\item All we need to do is create a circuit that can:
+				\begin{itemize}
+					\item Add two one-bit numbers and produce a sum and carry
+					\item In case the previous addition resulted in a carry, be able to add in that third number as well
+				\end{itemize}
+				\item Essentially, we need a logical circuit that can add three one-bit numbers. We can then use this circuit for each digit in our addition.
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Full Adders}
+			\begin{itemize}
+				\item Below is a full adder that meets our previously outlined specifications exactly.
+			\end{itemize}
+			
+			\centering
+			\begin{circuitikz}
+			\draw
+			(3,0) node[xor port] (myxor) {} to
+			(7,0) node[xor port,anchor=in 2] (myxor1) {}
+			(0,-2) node[and port,rotate=270] (myand) {}
+			(5,-2) node[and port,rotate=270] (myand1) {}
+			
+			(2.5,-4) node[or port,rotate=270] (myor) {}
+			(myxor.in 1) -- +(-2.5,0) node[anchor=east] (a) {A}
+			(myxor.in 2) -- +(-2.5,0) node[anchor=east] (b) {B}
+			(myor.out) node[anchor=north] (co) {Carry out}
+			(myxor.in 2 -| myand.in 1) node[circ] {} -- (myand.in 1)
+			(myxor.in 1 -| myand.in 2) node[circ] {} -- (myand.in 2)
+			(myand.out) |- (myor.in 2)
+			(myand1.out) |- (myor.in 1)
+		
+			(myand1.in 1) -- +(0,1.5) node[anchor=south] (cin) {Carry in}
+			(myand1.in 1 |- myxor1.in 1) node[circ] {} -- (myxor1.in 1)
+			(myxor1.in 2 -| myand1.in 2) node[circ] {} -- (myand1.in 2)
+			(myxor1.out) node[anchor=west] (sum) {Sum}
+			;
+			\end{circuitikz}
+		\end{frame}
+			     
+    
+    
+\end{document}

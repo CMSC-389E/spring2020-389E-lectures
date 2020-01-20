@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Announcements}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Project 2}{4}{0}{1}
+\beamer@sectionintoc {2}{Adders}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Addition}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Half Adders}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Full Adders}{13}{0}{2}
