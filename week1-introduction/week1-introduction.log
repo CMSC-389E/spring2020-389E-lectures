@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.15)  16 JAN 2020 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.15)  20 JAN 2020 03:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -874,6 +874,10 @@ thkerncmss.
 
 ] [14
 
+] [15
+
+] [16
+
 ]
 \tf@nav=\write6
 \openout6 = `week1-introduction.nav'.
@@ -884,29 +888,30 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `week1-introduction.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
- (./week1-introduction.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
+
+(./week1-introduction.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
 Package rerunfilecheck Info: File `week1-introduction.out' has not changed.
-(rerunfilecheck)             Checksum: 29914BA683AC9A02BAFBA50605E4A270;418.
+(rerunfilecheck)             Checksum: 20A37CB588E606DDE6941547E8DCAD79;462.
  ) 
 Here is how much of TeX's memory you used:
- 17121 strings out of 492982
- 327522 string characters out of 6134896
- 394854 words of memory out of 5000000
- 20266 multiletter control sequences out of 15000+600000
+ 17133 strings out of 492982
+ 327628 string characters out of 6134896
+ 395853 words of memory out of 5000000
+ 20273 multiletter control sequences out of 15000+600000
  10695 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,62p,804b,584s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on week1-introduction.pdf (14 pages, 73581 bytes).
+Output written on week1-introduction.pdf (16 pages, 78145 bytes).
 PDF statistics:
- 481 PDF objects out of 1000 (max. 8388607)
- 444 compressed objects within 5 object streams
- 36 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 544 PDF objects out of 1000 (max. 8388607)
+ 504 compressed objects within 6 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

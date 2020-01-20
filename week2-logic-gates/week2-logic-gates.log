@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.15)  18 JAN 2020 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.15)  20 JAN 2020 03:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,6 +1006,12 @@ thkerncmss.
 
 ] [28
 
+] [29
+
+] [30
+
+] [31
+
 ]
 \tf@nav=\write6
 \openout6 = `week2-logic-gates.nav'.
@@ -1016,19 +1022,19 @@ thkerncmss.
 \tf@snm=\write8
 \openout8 = `week2-logic-gates.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 715.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 715.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
  (./week2-logic-gates.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 715.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 715.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 755.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 755.
 Package rerunfilecheck Info: File `week2-logic-gates.out' has not changed.
-(rerunfilecheck)             Checksum: 48461D50CD58FBE0BD928B3531599958;426.
+(rerunfilecheck)             Checksum: 87397890DC6972EAE54059D91A572CF7;535.
  ) 
 Here is how much of TeX's memory you used:
- 27210 strings out of 492982
- 610230 string characters out of 6134896
- 774971 words of memory out of 5000000
- 30224 multiletter control sequences out of 15000+600000
+ 27231 strings out of 492982
+ 610429 string characters out of 6134896
+ 775173 words of memory out of 5000000
+ 30237 multiletter control sequences out of 15000+600000
  11788 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,15n,63p,803b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1040,10 +1046,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb>
-Output written on week2-logic-gates.pdf (28 pages, 151716 bytes).
+Output written on week2-logic-gates.pdf (31 pages, 159167 bytes).
 PDF statistics:
- 900 PDF objects out of 1000 (max. 8388607)
- 840 compressed objects within 9 object streams
- 64 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 996 PDF objects out of 1000 (max. 8388607)
+ 932 compressed objects within 10 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

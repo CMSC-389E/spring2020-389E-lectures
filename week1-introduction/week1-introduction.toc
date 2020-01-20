@@ -5,3 +5,4 @@
 \beamer@subsectionintoc {2}{1}{Instructors}{5}{0}{2}
 \beamer@subsectionintoc {2}{2}{What to Expect}{6}{0}{2}
 \beamer@subsectionintoc {2}{3}{What to Get Familiar With}{10}{0}{2}
+\beamer@sectionintoc {3}{Project 0}{15}{0}{3}
