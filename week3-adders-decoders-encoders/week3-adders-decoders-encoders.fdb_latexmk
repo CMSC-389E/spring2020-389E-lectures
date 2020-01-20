@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1579485080 "week3-adders-decoders-encoders.tex" "week3-adders-decoders-encoders.pdf" "week3-adders-decoders-encoders" 1579485081
+["pdflatex"] 1579506362 "week3-adders-decoders-encoders.tex" "week3-adders-decoders-encoders.pdf" "week3-adders-decoders-encoders" 1579506363
   "/etc/texmf/web2c/texmf.cnf" 1579084374 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
@@ -215,16 +215,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1579084420 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1579084432 4134830 0d1f858e796b5645f4c647ab5e989ffe ""
-  "week3-adders-decoders-encoders.aux" 1579485081 4235 bdc5f09fa84e87149cbc09640627dc21 ""
-  "week3-adders-decoders-encoders.nav" 1579485081 2319 ed39223321b9319ffc0f53ee92304e8a ""
-  "week3-adders-decoders-encoders.out" 1579485081 326 25546351d86818ca8e1f88f4910c4ba8 ""
-  "week3-adders-decoders-encoders.tex" 1579485080 8631 99dc3f63cfdeec4ce4782bb04990605a ""
-  "week3-adders-decoders-encoders.toc" 1579485081 300 ff08319bdcd1b8b93fe529496ea0fc88 ""
+  "week3-adders-decoders-encoders.aux" 1579506363 4513 92a9eefcd5406adc71f41d6dd59efe52 ""
+  "week3-adders-decoders-encoders.nav" 1579506363 2525 25d664a0d2115601145746d493f114a1 ""
+  "week3-adders-decoders-encoders.out" 1579506363 326 25546351d86818ca8e1f88f4910c4ba8 ""
+  "week3-adders-decoders-encoders.tex" 1579506362 9801 3254eab2df624c189fc8f7e02648af98 ""
+  "week3-adders-decoders-encoders.toc" 1579506363 300 ff08319bdcd1b8b93fe529496ea0fc88 ""
   (generated)
-  "week3-adders-decoders-encoders.nav"
+  "week3-adders-decoders-encoders.out"
   "week3-adders-decoders-encoders.snm"
   "week3-adders-decoders-encoders.aux"
-  "week3-adders-decoders-encoders.log"
   "week3-adders-decoders-encoders.pdf"
-  "week3-adders-decoders-encoders.out"
+  "week3-adders-decoders-encoders.nav"
   "week3-adders-decoders-encoders.toc"
+  "week3-adders-decoders-encoders.log"
