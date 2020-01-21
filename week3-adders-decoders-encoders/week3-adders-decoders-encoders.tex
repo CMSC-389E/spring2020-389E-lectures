@@ -356,27 +356,136 @@
 		\end{frame}
 		
 		
-	\section{Encoders \& Decoders}
+	\section{Decoders \& Encoders}
 	
 		\begin{frame}
          	\vfill
          	\centering
           	\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-           	\usebeamerfont{title}Encoders \& Decoders\par%
+           	\usebeamerfont{title}Decoders \& Encoders\par%
         	\end{beamercolorbox}
             \vfill
        	\end{frame}
        	
-    \section{Two's Complement}
-    
-    	\begin{frame}
-         	\vfill
-         	\centering
-          	\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-           	\usebeamerfont{title}Two's Complement\par%
-        	\end{beamercolorbox}
-            \vfill
+       	\subsection{Overview}
+       	
+       	\begin{frame}
+       		\frametitle{Decoders \& Encoders}
+       		\begin{itemize}
+       			\item We've run into the issue of wanting to convert binary to decimal and vice versa
+       			\item It turns out that this is an essential problem in digital logic (this specific case more-so in computer science)
+       			\item Engineers have designed two logical circuits to accomplish these tasks
+       			\begin{itemize}
+       				\item Decoders are circuits that can convert binary signals into a decimal representation of those signals
+       				\item Encoders are circuits that can condense those decimal representations of signals back into binary
+       			\end{itemize}
+       			\item These circuits can be generalized to different number systems as well, not just binary and decimal as we've specified
+       		\end{itemize}
        	\end{frame}
+       	
+       	\subsection{Formal Definitions}
+       	
+       	\begin{frame}
+       		\frametitle{Decoders \& Encoders}
+       		\begin{itemize}
+       			\item \textbf{Decoders} $ \Rightarrow $  Takes a 'denser' signal and converts it into an 'expanded' signal
+       			\begin{itemize}
+       				\item In our case, the decoder is converting our denser binary signal and converting it into an expanded decimal signal
+       				\item Less wires coming in, more wires coming out \linebreak
+       			\end{itemize}
+       			
+       			\item \textbf{Encoders} $ \Rightarrow $ Takes an 'expanded' signal and converts it into a 'denser' signal
+       			\begin{itemize}
+       				\item In our case, the encoder is converting our expanded decimal signal back into a denser binary signal
+       				\item More wires coming in, less wires coming out
+       			\end{itemize}
+       			
+       		\end{itemize}
+       	\end{frame}
+       	
+		\subsection{Decoders}       	
+       	
+       	\begin{frame}
+       		\frametitle{Decoders}
+       		\begin{itemize}
+       			\item Decoders allow us to translate a denser signal into its expanded form
+       			\item Let's say we had the following 3-bit binary number below. How would you systematically go about converting it to a decimal number? \linebreak
+       		\end{itemize}
+       		
+       		\centering
+       		
+       		{\LARGE \texttt{110}}
+       	\end{frame}
+       	
+       	\begin{frame}
+       		\frametitle{Decoders}
+       		\begin{itemize}
+       			\item The easiest way to go about this digitally is to assign a wire for each possible output
+       			\item In this case, we will need 3 input wires, each representing a bit of the input binary number
+       			\item Therefore, we will need 7 output wires, each representing a decimal value from 0 through 7
+       			\item Given output wires $O_0$, $O_1$, ... $O_7$, let's find a way to efficiently wire 3-bit binary inputs $I_0$, $I_1$, and $I_2$ to produce those results
+       		\end{itemize}
+       			 
+       	\end{frame}
+       	
+       	\begin{frame}
+       		\frametitle{Decoders}
+       		\begin{itemize}
+       			\item Let's start with a truth table
+       		\end{itemize}
+       		
+       		\centering
+       		\includegraphics[width=0.8\textwidth]{decoder}
+       	\end{frame}
+       	
+       	\begin{frame}
+       		\frametitle{Decoders}
+       		\begin{itemize}
+       			\item It turns out, we can represent this pretty systematically
+       			\item Notice the clever use of input buses, which we went over briefly last week
+       		\end{itemize}
+       		
+       		\centering
+       		\includegraphics[width=0.5\textwidth]{decoder2}
+       	\end{frame}
+       	
+       	\subsection{Encoders}
+       	
+       	\begin{frame}
+       		\frametitle{Encoders}
+       		\begin{itemize}
+       			\item Think of encoders as the complement to decoders- they do everything a decoder can do, but backwards
+       			\item Going back to our previous example, let's assume we had 7 input wires, each signifying the decimal numbers 0-7
+       			\item Our goal is, based on which wire (0-7) is on, to produce the corresponding binary representation as output along the 3 output wires
+       		\end{itemize}
+       	\end{frame}
+       	
+       	\begin{frame}
+       		\frametitle{Encoders}
+       		\begin{center}
+       			\LARGE{1 2 4}
+       		\end{center}
+       		\begin{itemize}
+       			\item What's so special about these 3 numbers to us?
+       			\item The key is that each number 0-7 can be represented as a unique additive combination of 1, 2, and 4
+       			\begin{itemize}
+       				\item e.g. $1=1$, $2=2$, $3=2+1$
+       			\end{itemize}
+       			\item This is a principle of the binary number system itself
+       			\item By leveraging this fact, we can simply match each unique additive combination of 1, 2 and 4 to its corresponding input wire
+       		\end{itemize}
+       		
+       	
+       	\end{frame}
+       	
+       	\begin{frame}
+       		\frametitle{Encoders}
+       		\begin{itemize}
+       			\item Below is an encoder's circuit and truth table- Notice that it looks similar in design to the decoder that we discussed\linebreak
+       		\end{itemize}
+       		\centering
+       		\includegraphics[width=0.9\textwidth]{encoder}
+       	\end{frame}  	
     
     \section{Project 2}
     
@@ -387,6 +496,19 @@
            	\usebeamerfont{title}Project 2\par%
         	\end{beamercolorbox}
             \vfill
+       	\end{frame}
+
+		\subsection{Project Tips}       	
+       	
+       	\begin{frame}
+       		\frametitle{Project 2}
+       		\begin{itemize}
+       			\item For this project, you won't be working with decoders and encoders so much as you'll be working with adders.
+       			\item We're moving on to the 'Arithmetic' portion of your ALU now (congrats, the logic processing is good to go!)
+       			\item All you have to do now, is take care of how the ALU handles basic adding, and you should be set for this project
+       			\item Remember the project guidelines and don't start too late!
+       			\item As always, these slides and supplemental resources can be found on the course website
+       		\end{itemize}
        	\end{frame}
 		
 		
