@@ -2,3 +2,6 @@
 \beamer@subsectionintoc {1}{1}{Project 3}{4}{0}{1}
 \beamer@sectionintoc {2}{Multipliers}{6}{0}{2}
 \beamer@subsectionintoc {2}{1}{Multiplication in Binary}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Limitations}{16}{0}{2}
+\beamer@sectionintoc {3}{Iterative Algorithms}{17}{0}{3}
+\beamer@subsectionintoc {3}{1}{Iterative Algorithms}{18}{0}{3}

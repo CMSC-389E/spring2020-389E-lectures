@@ -77,7 +77,7 @@
     	\begin{frame}
     		\frametitle{A Question}
     		\begin{center}
-    			{\Large How does multiplication work in Binary?}
+    			{\Large How does multiplication work in binary?}
     		\end{center}
     	\end{frame}
     	
@@ -104,9 +104,168 @@
 					}
     	\end{frame}
     	
+    	\begin{frame}
+    		\frametitle{Multiplication}
+    		\begin{itemize}
+    			\item Before you get very excited, this is only a small bit of what we're after.
+    			\item Now, we know how to multiply one-bit numbers (Yay!)
+    			\begin{itemize}
+    				\item note that \texttt{AND} is all you need to represent this operation
+    			\end{itemize}
+    			\item In binary, multiplication is the same as it's always been for us in decimal
+    			\item Let's go through an example now
+    		\end{itemize}
+    	\end{frame}
     	
-		
-		
-    
+    	
+    	\begin{frame}
+    		\frametitle{Multiplication}
+    		
+    		\begin{itemize}
+    			\item Again, we will look to the 'long' way of doing this computation for inspiration
+    		\end{itemize}
+
+			\centering    		
+    		
+    		{\Huge
+			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
+					   & &  &  &  &  & 1 & 1 & 0 & 1 \\
+					   & &  &  &  & $\times$ & 1 & 0 & 1 & 1 \\
+					   \hline
+					   
+					
+					
+			\end{tabular}}
+			\vfill
+    	\end{frame}
+    	
+    	
+    	\begin{frame}
+    		\frametitle{Multiplication}
+
+			\centering    		
+    		
+    		{\Huge
+			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
+					   & &  &  &  &  & 1 & 1 & 0 & 1 \\
+					   & &  &  &  & $\times$ & 1 & 0 & 1 & 1 \\
+					   \hline
+					   & &  &  &  &   & 1 & 1 & 0 & 1 \\
+					   & &  &  &  & 1 & 1 & 0 & 1 & {\color{red}0} \\
+					   & &  &  & 0 & 0 & 0 & 0 & {\color{red}0} & {\color{red}0} \\
+					   & &  & 1 & 0 & 1 & 1 & {\color{red}0} & {\color{red}0} & {\color{red}0} \\
+					   \hline
+					    &  & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1
+					
+					
+			\end{tabular}}
+			\vfill
+    	\end{frame}
+    	
+    	
+    	\begin{frame}
+    		\frametitle{What can we gather?}
+    		\begin{itemize}
+    			\item What exactly can we gather from doing this computation out longhand?
+    			\begin{itemize}
+    				\item Binary multiplication is even easier than decimal; we only have two choices: 1 or 0
+    				\item Go from right to left, multiplying out the individual numbers
+    				\item After some analysis, this appears to be repeated additions (which are somewhat similar each time)
+    				\item We will implement multiplication the same way!
+    				\item By leveraging repeated sets of Full Adders, we can easily perform these repeated additions.
+    			\end{itemize}
+    			\item Q: But Aki, what if we have too many carries in a single column for a FA to add???
+    			\begin{itemize}
+    				\item A: We're screwed
+    			\end{itemize}
+    		\end{itemize}
+    	\end{frame}
+    	
+    	\begin{frame}
+    		
+    			\frametitle{Partial Additions}
+    			\begin{itemize}
+    				\item Remember how some columns had us adding more than the maximum that a Full Adder could handle? 
+    				\begin{itemize}
+    					\item Let's try and address that
+					\end{itemize}
+    				\item In other words, we want to cut down this big computation into chunks juust small enough so that Full Adders can handle each chunk of it
+    				\item Formally, this sort of black magic is called 'Partial Additions'- look to the whiteboard for a demonstration
+    				\begin{itemize}
+    					\item I've also got a video up on the course website explaining this stuff in more detail if you want more clarification
+    				\end{itemize}
+    			\end{itemize}
+    		
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{Bringing it all Together}
+    		\begin{itemize}
+    			\item We know how to multiply one-bit numbers
+    			\item We know how to add said numbers together with Full Adders
+    			\item We've come up with a clever way to make sure we don't have more carries than we can handle
+    			\item Now we just need to implement it (and repeat it a bunch!)
+    		\end{itemize}
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{The Actual Circuit}
+    		\centering
+    		\includegraphics[width=0.85\textwidth]{comb_multiplier}
+    	\end{frame}
+    	
+    	
+
+		\subsection{Limitations}    	
+    	
+    	\begin{frame}
+    		\frametitle{Limitations}
+    		\begin{itemize}
+    			\item Addition, Subtraction (check out the two's complement video on the course website), and Multiplication- we've done it all.
+    			\item What about division? Exponentiation?
+    			\item The Answer: \textbf{It's harder}
+    			\item One Solution: Iterative algorithms
+    		\end{itemize}
+    	\end{frame}
+    	
+		\section{Iterative Algorithms}    	
+    	
+    	\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Iterative Algorithms\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+             
+    	
+    	\subsection{Iterative Algorithms}
+    	
+    	\begin{frame}
+    		\frametitle{Iterative Algorithms}
+    		\begin{itemize}
+    			\item Why would we want to use this fancy sounding method?
+    			\item Reusing adders will help us- saving gates at the cost of speed
+    			\item This is where we begin bridging the gap between the cave-person computer science we're doing and what's actually in computers these days
+    		\end{itemize}
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{Division}
+    		\begin{itemize}
+    			\item Consider division for a moment- how would we do a classic division?
+    			\begin{itemize}
+    				\item No, I'm not whipping out some long division example for you guys
+    				\item Q: Is it possible to convert this to binary, though?
+    				\item A: We can try!
+    			\end{itemize}
+    		\end{itemize}
+    	\end{frame}
+    	
+    	% TODO Finish section on iterative division algorithm
+    	% TODO Mention 2's complement application will be online
+    	% TODO Talk about the project
+   
     
 \end{document}
