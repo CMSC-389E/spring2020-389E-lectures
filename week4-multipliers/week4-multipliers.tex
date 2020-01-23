@@ -1,0 +1,112 @@
+\documentclass{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{spruce}
+\usepackage{circuitikz}
+\usepackage{graphicx}
+
+\title{Multipliers, Iterative Algorithms, Negative Numbers}
+\subtitle{Leveraging Adders for a Greater Purpose}
+\author[A Praveen \& A Krishnan]{Akilesh Praveen \& Ashwath Krishnan}
+\institute{UMD}
+\date{\today}
+
+
+
+\begin{document}
+
+    % title page
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    
+    % table of contents
+    \begin{frame}
+        \frametitle{Agenda}
+        \tableofcontents
+    \end{frame}
+    
+    \section{Announcements}
+    
+        \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Announcements\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+        \subsection{Project 3}
+        
+            
+            
+            \begin{frame}
+                \frametitle{Project 3}
+                \begin{itemize}
+                    \item Project 3's been released, and the name of the game is multipliers.
+                    \item You'll find everything you need under the 'week 4' section on the course website
+                    \item Today's lecture will give you all the background knowledge that you need to know about implementing a multiplier
+                    
+                    \item More info to come at the end of lecture
+                    
+                \end{itemize}
+            \end{frame}
+            
+            \begin{frame}
+            	\frametitle{Some Reminders}
+            	\begin{itemize}
+            		\item As the projects become more involved, we'd like to remind you to reach out and attend office hours if you are struggling.
+                    \item Additionally, here's a reminder that all projects can be group projects, but you'll have to let us know \textbf{4 days} prior to the project's due date if you'll be working in a group. (Max size of 3)
+            	\end{itemize}
+            	
+            \end{frame}
+        
+    \section{Multipliers}
+    
+    	\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Multipliers\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+    	\subsection{Multiplication in Binary}
+    
+    	\begin{frame}
+    		\frametitle{A Question}
+    		\begin{center}
+    			{\Large How does multiplication work in Binary?}
+    		\end{center}
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{Multiplication Table}
+    		\begin{itemize}
+    			\item Multiplication works the same way in binary as it does in base-10!
+    			\item Just like single digit multiplication in base-10 goes up to $ 9 \times 9 $, single digit multiplication in binary goes up to $ 1 \times 1$
+    			\item Here's the basic multiplication table for binary:
+
+    		\end{itemize}
+    		
+    		\centering
+    		{\Large
+    		\begin{tabular}{ |c|c|c| }
+					\hline
+				 	 & \textbf{0} & \textbf{1} \\ 
+				 	\hline
+				 	\textbf{0} & 0 & 0 \\  
+				 	\hline
+				 	\textbf{1} & 0 & 1 \\
+				 	\hline 
+					\end{tabular}
+					}
+    	\end{frame}
+    	
+    	
+		
+		
+    
+    
+\end{document}

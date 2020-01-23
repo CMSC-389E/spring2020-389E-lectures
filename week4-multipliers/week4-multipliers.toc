@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Announcements}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Project 3}{4}{0}{1}
+\beamer@sectionintoc {2}{Multipliers}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Multiplication in Binary}{7}{0}{2}
