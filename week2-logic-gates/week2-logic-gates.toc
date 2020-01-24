@@ -1,9 +1,0 @@
-\beamer@sectionintoc {1}{Announcements}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Project 1}{4}{0}{1}
-\beamer@sectionintoc {2}{Logic Gates}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Inputs \& Outputs}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{The Basic Gates}{9}{0}{2}
-\beamer@subsectionintoc {2}{3}{Applications in Computing}{16}{0}{2}
-\beamer@sectionintoc {3}{Note on Logic Rules / Efficiency}{23}{0}{3}
-\beamer@sectionintoc {4}{Project 1}{29}{0}{4}
-\beamer@subsectionintoc {4}{1}{What is an ALU?}{30}{0}{4}
