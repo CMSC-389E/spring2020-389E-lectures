@@ -43,20 +43,31 @@
             \begin{frame}
                 \frametitle{Project 2}
                 \begin{itemize}
-                    \item Project 2 has been released, and can be found on the course website under 'Week 3' on the calendar.
+                    \item Project 2 will be released Saturday (2/15), and can be found on the course website under 'Week 3' on the calendar.
                     \item Everything you need to complete the project will be covered in today's lecture, with optional supplementary material provided on the course website under Week 3's resources section.
+                \end{itemize}
+            \end{frame}
+            
+       \subsection{Project 1 Updates}
+            
+            \begin{frame}
+                \frametitle{Project 1 Checkpoint}
+                \begin{itemize}
+                    \item https://ter.ps/proj1spr2020
+                    \item If you would like, upload your worldfile to this by \textbf{tonight}, Friday 2/14, and we will check it to make sure you're on the right track/ give you feedback for it. (This is \textbf{optional})
                     
                 \end{itemize}
             \end{frame}
             
             \begin{frame}
-            	\frametitle{Some Reminders}
-            	\begin{itemize}
-            		\item As the projects become more involved, we'd like to remind you to reach out and attend office hours if you are struggling.
-                    \item Additionally, here's a reminder that all projects can be group projects, but you'll have to let us know \textbf{4 days} prior to the project's due date if you'll be working in a group. (Max size of 3)
-            	\end{itemize}
-            	
+                \frametitle{Project 1 Extension/Grading}
+                \begin{itemize}
+                    \item We will be grading the project 1 \textbf{in class} next week. Attendance is mandatory for this (unless excused).
+                    \item For this reason, P1's deadline has been extended until \textbf{the beginning of class on 2/21}.
+                    
+                \end{itemize}
             \end{frame}
+            
         
     \section{Adders}
     
@@ -107,6 +118,45 @@
 			\centering
 			{\LARGE
 			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
+					   & 1 & 1 & 1 & 0 & 1 \\
+					 + & 1 & 1 & 0 & 1 & 1 \\
+					\hline
+					& & & & & 0
+					
+			\end{tabular}}
+		\end{frame}
+		
+		\begin{frame}
+    		\frametitle{Addition}
+    		\begin{itemize}
+    			\item Let's visualize the computation as long addition
+    			\item How would you go about solving it this way?
+			\end{itemize}
+			
+			\centering
+			{\LARGE
+			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
+					   &   &   &   & {\color{red}1} &   \\
+					   & 1 & 1 & 1 & 0 & 1 \\
+					 + & 1 & 1 & 0 & 1 & 1 \\
+					\hline
+					   &   &   &   &   & 0
+					
+			\end{tabular}}
+			
+			
+		\end{frame}	
+		
+		\begin{frame}
+    		\frametitle{Addition}
+    		\begin{itemize}
+    			\item Let's visualize the computation as long addition
+    			\item How would you go about solving it this way?
+			\end{itemize}
+			
+			\centering
+			{\LARGE
+			\begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c}
 					   &   &   &   & {\color{red}1} &   \\
 					   & 1 & 1 & 1 & 0 & 1 \\
 					 + & 1 & 1 & 0 & 1 & 1 \\
@@ -130,9 +180,35 @@
 				\item First, let's represent the \texttt{1}s as \texttt{TRUE}s and the \texttt{0}s as \texttt{FALSE}s
 				\item Think back to last week when we talked about designing circuits that dealt with booleans
 				\item The big question: can we perform the addition process that we just talked about using such gates?
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Half Adders}
+			\begin{itemize}
+				\item First, let's represent the \texttt{1}s as \texttt{TRUE}s and the \texttt{0}s as \texttt{FALSE}s
+				\item Think back to last week when we talked about designing circuits that dealt with booleans
+				\item The big question: can we perform the addition process that we just talked about using such gates?
 				\item The answer: \textbf{absolutely}
 			\end{itemize}
 		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Half Adders}
+			\begin{itemize}
+				\item Let's take this step by step.
+				\item Looking at the addition example, what's the simplest operation we can take away from that?
+				\item Let's see if we can build something that can take two one-bit numbers and add them, producing a carry if applicable
+				\begin{itemize}
+					\item In terms of inputs, we will need two booleans
+					\item In terms of outputs, we will need two booleans (one for our sum, and one for the carry)
+				\end{itemize}
+				
+			\end{itemize}
+			
+				
+		\end{frame}
+		
 		
 		\begin{frame}
 			\frametitle{Half Adders}
