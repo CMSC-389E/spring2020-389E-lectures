@@ -36,7 +36,7 @@
                 \vfill
              \end{frame}
     
-        \subsection{Project 3}
+        \subsection{Project 4}
         
             
             
@@ -57,37 +57,16 @@
     	\subsection{Introduction}
     	
     	\begin{frame}
-    		\frametitle{Multiplexers \& Demultiplexers}
-    		
-    		\begin{itemize}
-    			\item A \textbf{Multiplexer} is often called a 'mux'.
-    			\item A \textbf{Demultiplexer} is often called a 'demux'.
-    		\end{itemize}
-    		
-		\end{frame}  
-		
-		\begin{frame}
-    		\frametitle{Multiplexers \& Demultiplexers}
-    		
-    		\begin{itemize}
-    			\item A \textbf{Multiplexer} is often called a 'mux'.
-    			\item A \textbf{Demultiplexer} is often called a 'demux'.
-    			\item The question is- what are they?
-    		\end{itemize}
-    		
-		\end{frame}
-		
-		\begin{frame}
-			\frametitle{Need necessitates solution}
-			\begin{itemize}
-				\item The need for \textbf{Multiplexers} arose due to the presence of a certain problem in digital circuit design.
-				\item Remember our buses + encoders and decoders?
-				\item It turns out, there are a lot of different circuits that would require us to have a fair amount of parallel wires.
-				
-			\end{itemize}
-		\end{frame}		 
-		
-		\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Muxes and Demuxes\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    	
+    	
+    	\begin{frame}
 			\frametitle{An example}
       
 
@@ -156,7 +135,41 @@
 				\item Yes!!!
 				\item Your answer can be found in \textbf{Multiplexers} and \textbf{Demultiplexers}.
 			\end{itemize}
-		\end{frame}			  	        
+		\end{frame}		
+    	
+    	\begin{frame}
+    		\frametitle{Multiplexers \& Demultiplexers}
+    		
+    		\begin{itemize}
+    			\item A \textbf{Multiplexer} is often called a 'mux'.
+    			\item A \textbf{Demultiplexer} is often called a 'demux'.
+    		\end{itemize}
+    		
+		\end{frame}  
+		
+		\begin{frame}
+    		\frametitle{Multiplexers \& Demultiplexers}
+    		
+    		\begin{itemize}
+    			\item A \textbf{Multiplexer} is often called a 'mux'.
+    			\item A \textbf{Demultiplexer} is often called a 'demux'.
+    			\item The question is- what are they?
+    		\end{itemize}
+    		
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Need necessitates solution}
+			\begin{itemize}
+				\item The need for \textbf{Multiplexers} arose due to the presence of a certain problem in digital circuit design.
+				\item Think back to our bus designs, and our encoders and decoders
+				\item It turns out, there are a lot of different circuits that would require us to have a fair amount of parallel wires.
+				\item In other words, it's a \textbf{common problem} in digital logic design to have to deal with a multitude of \textbf{parallel signals}.
+				
+			\end{itemize}
+		\end{frame}		 
+		
+			  	        
         
     
     	\subsection{What are Muxes and Demuxes?}
@@ -248,13 +261,687 @@
     	\end{frame}
     	
     	\begin{frame}
-    		\frametitle{What are they?}
+    		\frametitle{What can we observe?}
     		\begin{itemize}
-    			\item A \textbf{Multiplexer}, or \textbf{Mux}, takes a bunch of parallel wires and condenses all of them down to a singular \texttt{OUT} wire and a few \texttt{SELECT} wires.
-    			\item A \textbf{Demultiplexer}, or \textbf{Demux}, takes a singular \texttt{IN} wire and a few \texttt{SELECT} wires, and sends the \texttt{IN} signal down the appropriate output wire.
-    			\item Although it may seem unnecessary at first, I invite you to think on a larger scale (as we will later in this lecture)
+    			\item In the earlier example, instead of having to carry 4 wires across the distance spanned by the mux and demux, we only needed the singular output wire and the selector wires
+    			\item In other words, we only need to worry about carrying the wires highlighted in red across the distance spanned by the mux and demux
     		\end{itemize}
+    		
+    		
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw    (63.67,95.33) -- (111.64,96.57) -- (123,96.08) ;
+\draw [shift={(125,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw    (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw    (62.33,148) -- (111.64,147.9) -- (123,147.42) ;
+\draw [shift={(125,147.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw    (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw    (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw    (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw    (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw    (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,231) node  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (365.33,231.67) node  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+
     	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{What can we observe?}
+    		\begin{itemize}
+    			\item The \texttt{OUT} wire is simple enough- that's the signal that we ultimately want to transfer across
+    			\item As for the \texttt{SELECT} wires, they're a little more nuanced 
+    			\item Can anybody guess why (if we have 4 inputs/outputs) we need two \texttt{SELECT} wires for our mux/demux combo?
+    		\end{itemize}
+    		
+    		
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw    (63.67,95.33) -- (111.64,96.57) -- (123,96.08) ;
+\draw [shift={(125,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw    (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw    (62.33,148) -- (111.64,147.9) -- (123,147.42) ;
+\draw [shift={(125,147.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw    (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw    (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw    (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw    (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw    (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,231) node  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (365.33,231.67) node  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{What can we observe?}
+    		\begin{itemize}
+    			\item If we want to signify which of the four inputs are being transmitted across the \texttt{OUTPUT} channel, we can go ahead and represent which one it is by using binary
+    			
+    		\end{itemize}
+    		
+    		
+    		
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw    (63.67,95.33) -- (111.64,96.57) -- (123,96.08) ;
+\draw [shift={(125,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw    (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw    (62.33,148) -- (111.64,147.9) -- (123,147.42) ;
+\draw [shift={(125,147.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw    (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw    (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw    (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw    (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw    (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,231) node  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (365.33,231.67) node  [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+
+    	\end{frame}
+    	
+    	
+    	\begin{frame}
+			\frametitle{$4 \times 1$ Multiplexer \& Demultiplexer Example}
+			
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (63.67,94.67) -- (111.64,95.9) -- (123,95.42) ;
+\draw [shift={(125,95.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw    (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw    (62.33,148) -- (111.64,147.9) -- (123,147.42) ;
+\draw [shift={(125,147.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw    (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw    (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw    (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw    (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,229.67) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {0 \ \ 0};
+% Text Node
+\draw (366,230.33) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {0 \ 0};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+    		
+    		
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{$4 \times 1$ Multiplexer \& Demultiplexer Example}
+    		
+    		
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (63.67,94.67) -- (111.64,95.9) -- (123,95.42) ;
+\draw [shift={(125,95.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw    (62.33,148) -- (111.64,147.9) -- (123,147.42) ;
+\draw [shift={(125,147.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw    (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw    (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw    (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,229.67) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {0 \ \ 1};
+% Text Node
+\draw (366.67,230.33) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {0 \ 1};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+
+    	\end{frame}
+    	
+    	
+    	\begin{frame}
+    		\frametitle{$4 \times 1$ Multiplexer \& Demultiplexer Example}
+    		
+    		
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (63.67,94.67) -- (111.64,95.9) -- (123,95.42) ;
+\draw [shift={(125,95.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (62.33,148) -- (111.64,147.9) -- (123,147.42) ;
+\draw [shift={(125,147.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw    (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw    (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,229.67) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {1 \ \ 0};
+% Text Node
+\draw (366.67,229.67) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {1 \ \ 0};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+
+    	\end{frame}
+    	
+    	\begin{frame}
+    		\frametitle{$4 \times 1$ Multiplexer \& Demultiplexer Example}
+    		
+    		
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp9676716720394224] 
+\draw  [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ] (127,83.42) -- (186,101.12) -- (186,168.97) -- (127,186.67) -- cycle ;
+%Shape: Trapezoid [id:dp8112150659093363] 
+\draw  [fill={rgb, 255:red, 80; green, 227; blue, 194 }  ,fill opacity=1 ] (400,188) -- (341,170.3) -- (341,102.45) -- (400,84.75) -- cycle ;
+%Straight Lines [id:da17513161874771777] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (189,136.5) -- (335,135.51) ;
+\draw [shift={(337,135.5)}, rotate = 539.61] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7314260725072124] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (63.67,94.67) -- (111.64,95.9) -- (123,95.42) ;
+\draw [shift={(125,95.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da32898600894177765] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (61.67,122) -- (110.98,121.9) -- (122.34,121.42) ;
+\draw [shift={(124.33,121.33)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7983247275507934] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (62.33,147.33) -- (111.64,147.23) -- (123,146.75) ;
+\draw [shift={(125,146.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da04807653219902874] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (63,173.33) -- (112.31,173.23) -- (123.67,172.75) ;
+\draw [shift={(125.67,172.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5159526044803394] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (400.33,96) -- (445.64,96.57) -- (457,96.08) ;
+\draw [shift={(459,96)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8929745222846369] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (399.67,123.33) -- (448.98,123.23) -- (460.34,122.75) ;
+\draw [shift={(462.33,122.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5083766804065095] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (400.33,149.33) -- (449.64,149.23) -- (461,148.75) ;
+\draw [shift={(463,148.67)}, rotate = 537.5699999999999] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4565821283716822] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (401,174.67) -- (450.31,174.57) -- (461.67,174.08) ;
+\draw [shift={(463.67,174)}, rotate = 537.5699999999999] [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da9657285985744374] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ]   (149.67,218.67) -- (149.67,183.33) ;
+\draw [shift={(149.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15318619740493855] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (171.67,217.33) -- (172.3,178) ;
+\draw [shift={(172.33,176)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da870193447515214] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (375.67,218.67) -- (375.67,183.33) ;
+\draw [shift={(375.67,181.33)}, rotate = 450] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da69110814819773] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (357,218) -- (357.63,178.67) ;
+\draw [shift={(357.67,176.67)}, rotate = 450.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (160.67,229.67) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {1 \ \ 1};
+% Text Node
+\draw (367.33,228.33) node  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {1 \ \ 1};
+% Text Node
+\draw (47.33,135) node   [align=left] {{\fontfamily{pcr}\selectfont in}};
+% Text Node
+\draw (476.67,133) node   [align=left] {{\fontfamily{pcr}\selectfont out}};
+% Text Node
+\draw (156.5,135.04) node   [align=left] {{\fontfamily{pcr}\selectfont mux}};
+% Text Node
+\draw (370.5,136.38) node   [align=left] {{\fontfamily{pcr}\selectfont {\small demux}}};
+
+
+\end{tikzpicture}
+
+    	\end{frame}
+    	
+    	
+    	\begin{frame}
+			\frametitle{Immediate Observations}
+			\begin{itemize}
+				\item We need less wires to carry signals across long distances (this is good!)
+				\item We can only carry one signal across this channel at once (this may be bad!)
+				\item In summary- it's all about tradeoffs
+			\end{itemize}			    		
+    		
+    	\end{frame}
+    	
+    	
+    	\subsection{Muxes and Demuxes In-Depth}
+    	
+    	
+    	\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Muxes \& Demuxes In-depth\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+             
+             \begin{frame}
+             	\frametitle{Multiplexer}
+             	
+             	\begin{itemize}
+             		\item Now that we understand multiplexers conceptually, can you think of how you'd build it with the logic gates we've learned? 
+             	\end{itemize}
+             	
+             	\centering
+             	
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp8819284031411343] 
+\draw  [fill={rgb, 255:red, 245; green, 166; blue, 35 }  ,fill opacity=1 ] (234,63.88) -- (317.5,88.93) -- (317.5,184.95) -- (234,210) -- cycle ;
+%Straight Lines [id:da018103449442484876] 
+\draw    (171,90.25) -- (229.54,90.49) ;
+\draw [shift={(231.54,90.5)}, rotate = 180.24] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da27398747593297434] 
+\draw    (171,121.75) -- (229.54,121.76) ;
+\draw [shift={(231.54,121.76)}, rotate = 180.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da45011870969451995] 
+\draw    (174,156.25) -- (230,156.42) ;
+\draw [shift={(232,156.43)}, rotate = 180.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3811016173438192] 
+\draw    (176,190.25) -- (230.5,190.3) ;
+\draw [shift={(232.5,190.3)}, rotate = 180.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3695279660393864] 
+\draw    (318.5,133.46) -- (378.5,133.26) ;
+\draw [shift={(380.5,133.25)}, rotate = 539.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8955779809256085] 
+\draw    (269.5,246) -- (269.01,199.56) ;
+\draw [shift={(268.99,197.56)}, rotate = 449.4] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2688029751798525] 
+\draw    (295.47,245.93) -- (294.54,194.25) ;
+\draw [shift={(294.5,192.25)}, rotate = 448.97] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (157.5,89.5) node   [align=left] {{\fontfamily{pcr}\selectfont In{\tiny 0}}};
+% Text Node
+\draw (158.5,120.5) node   [align=left] {{\fontfamily{pcr}\selectfont In{\tiny 1}}};
+% Text Node
+\draw (158.5,155.5) node   [align=left] {{\fontfamily{pcr}\selectfont In{\tiny 2}}};
+% Text Node
+\draw (160.5,188.5) node   [align=left] {{\fontfamily{pcr}\selectfont In{\tiny 3}}};
+% Text Node
+\draw (283,252.5) node   [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (359.5,115.5) node   [align=left] {{\fontfamily{pcr}\selectfont OUT}};
+% Text Node
+\draw (275.75,136.94) node   [align=left] {{\fontfamily{pcr}\selectfont {\small 4 x 1 Mux}}};
+
+
+\end{tikzpicture}
+
+             \end{frame}
+
+
+			\begin{frame}
+				\frametitle{Demultiplexer}
+				
+				\begin{itemize}
+					\item Here's the complement, a $1 \times 4$ Demultiplexer. As you can imagine, demistifying the internal logic components is pretty similar to what we did for the mux.
+				\end{itemize}
+				
+				\centering
+				
+				
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Trapezoid [id:dp8819284031411343] 
+\draw  [fill={rgb, 255:red, 245; green, 166; blue, 35 }  ,fill opacity=1 ] (318.74,245.12) -- (235.32,219.82) -- (235.6,123.8) -- (319.18,99) -- cycle ;
+%Straight Lines [id:da3811016173438192] 
+\draw    (319,119.75) -- (376,119.75) ;
+\draw [shift={(378,119.75)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3695279660393864] 
+\draw    (170.5,170.75) -- (234,170.75) ;
+\draw [shift={(236,170.75)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8955779809256085] 
+\draw    (282.21,63.89) -- (282.59,110.33) ;
+\draw [shift={(282.61,112.33)}, rotate = 269.53] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2688029751798525] 
+\draw    (256.24,63.89) -- (257.05,115.58) ;
+\draw [shift={(257.09,117.58)}, rotate = 269.1] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3254374593013373] 
+\draw    (320,153.75) -- (377,153.75) ;
+\draw [shift={(379,153.75)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da660432657953691] 
+\draw    (318.5,189.75) -- (375.5,189.75) ;
+\draw [shift={(377.5,189.75)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8518268504183729] 
+\draw    (319.5,221.25) -- (376.5,221.25) ;
+\draw [shift={(378.5,221.25)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (394,121) node   [align=left] {{\fontfamily{pcr}\selectfont Out{\tiny 0}}};
+% Text Node
+\draw (395,151.5) node   [align=left] {{\fontfamily{pcr}\selectfont Out{\tiny 1}}};
+% Text Node
+\draw (395,187) node   [align=left] {{\fontfamily{pcr}\selectfont Out{\tiny 2}}};
+% Text Node
+\draw (396.5,220) node   [align=left] {{\fontfamily{pcr}\selectfont Out{\tiny 3}}};
+% Text Node
+\draw (277,169) node   [align=left] {{\fontfamily{pcr}\selectfont {\footnotesize 1 x 4 Demux}}};
+% Text Node
+\draw (270,53.5) node   [align=left] {{\fontfamily{pcr}\selectfont SELECT}};
+% Text Node
+\draw (177,160.5) node   [align=left] {{\fontfamily{pcr}\selectfont In}};
+
+
+\end{tikzpicture}
+
+			\end{frame}	
+			
+			
+			
+			% TODO Add logical circuit for mux
+			% TODO Add logical circuit for demux
+			% TODO Talk about math + applications in CPUs
+			% TODO Talk about broader scope applications (???)
+			% TODO Add a section to talk about project		             
+             
+        \subsection{Applications}
+             
+             \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Applications\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
    
    		
     
