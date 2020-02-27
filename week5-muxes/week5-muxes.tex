@@ -5,7 +5,7 @@
 \usepackage{graphicx}
 
 \title{Multiplexers \& Demultiplexers}
-\subtitle{Convenience in circuit design}
+\subtitle{Why use many wire when few wire do trick}
 \author[A Praveen \& A Krishnan]{Akilesh Praveen \& Ashwath Krishnan}
 \institute{UMD}
 \date{\today}
@@ -862,7 +862,15 @@
 \end{tikzpicture}
 
              \end{frame}
-
+             
+             \begin{frame}
+             	\frametitle{Multiplexer}
+             	\begin{itemize}
+             		\item Here's the actual logical circuit
+             	\end{itemize}
+             	\centering
+             	\includegraphics[width=0.7\textwidth]{multiplexer}
+             \end{frame}
 
 			\begin{frame}
 				\frametitle{Demultiplexer}
@@ -922,12 +930,18 @@
 
 \end{tikzpicture}
 
-			\end{frame}	
+			\end{frame}
+			
+			\begin{frame}
+             	\frametitle{Demultiplexer}
+             	\begin{itemize}
+             		\item Here's the actual logical circuit
+             	\end{itemize}
+             	\centering
+             	\includegraphics[width=0.6\textwidth]{demultiplexer}
+             \end{frame}	
 			
 			
-			
-			% TODO Add logical circuit for mux
-			% TODO Add logical circuit for demux
 			% TODO Talk about math + applications in CPUs
 			% TODO Talk about broader scope applications (???)
 			% TODO Add a section to talk about project		             
@@ -942,6 +956,129 @@
                 \end{beamercolorbox}
                 \vfill
              \end{frame}
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item So how \textbf{useful} are these, anyway?
+             		\item As it turns out, there are clear mathematical reasons why
+             	\end{itemize}
+             	
+             \end{frame}
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item Consider the computer
+             		\item CPUs need to leverage \textbf{muxes} and \textbf{demuxes} to process instructions and data efficiently
+             		\item In particular, think of the ALU (what your projects have been, but way bigger)
+             	\end{itemize}
+             	
+             \end{frame}
+             
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item We provide them for you in the projects, but consider where the inputs for these ALU operations come from
+             		\item If you think back to 216, the actual data comes from memory locations
+             		\item To keep the math from becoming utter spaghetti, let's talk about \textbf{32-bit} systems for now.
+             		
+             	\end{itemize}
+             	
+             \end{frame}
+             
+             \begin{frame}
+             
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item Knowing that an ALU performs crucial operations that depend on the inputs it gets, let's figure out how we'd access those inputs
+             		\item First of all, does anyone know how many memory addresses a 32-bit system would have?
+             		
+             	\end{itemize}
+             	
+             \end{frame}
+             
+             \begin{frame}
+             
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item Knowing that an ALU performs crucial operations that depend on the inputs it gets, let's figure out how we'd access those inputs
+             		\item First of all, does anyone know how many memory addresses a 32-bit system would have? \newline
+             		
+             	\end{itemize}
+             	
+             	\centering
+             	
+             	\begin{Huge}
+             		\texttt{$2^{32} = 4294967296$}
+             	\end{Huge}
+             	
+             \end{frame}
+             
+             
+             \begin{frame}
+             
+             	\frametitle{Applications of Multiplexers}
+             	
+             	\begin{itemize}
+             		\item What would the inside of our computers be like if we had a little wire connecting each of those individual memory addresses to the ALU?
+             	\end{itemize}
+    
+             	
+             \end{frame}
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\centering
+             	\includegraphics[width=0.9\textwidth]{spaghetti}
+             \end{frame}
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item Instead of having around 4 million individual wires, we can use a multiplexer
+             		\item How much would that cut us down to? (Remember, 32-bit architecture)
+             	\end{itemize}
+             \end{frame}
+             
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item Instead of having around 4 million individual wires, we can use a multiplexer
+             		\item How much would that cut us down to? (Remember, 32-bit architecture)
+             		\item \textbf{We'd only need 1 output wire and 32 selector wires! (zoo wee mama)}
+             		\item Keep in mind that modern ALUs can do way more than just add, subtract, and do simple logic gate operations, so this sort of implementation is majorly useful for us
+             		\item P.S. How do you think it gets put back in memory?
+             	\end{itemize}
+             \end{frame}
+             
+             
+             \begin{frame}
+             	\frametitle{Applications of Multiplexers}
+             	\begin{itemize}
+             		\item Just food for thought- multiplexing and demultiplexing is hugely useful for us in other realms as well
+             		\item How do you think phone calls are made on landlines? Is there really a wire that connects your landline to every other phone in the world?
+             		\item Remember cable TV? (Emphasis on cable)
+             		\item As it turns out, multiplexing and demultiplexing has proved very useful for us within the digital logic realm and outside of it
+             	\end{itemize}
+             \end{frame}
+             
+             
+		\subsection{Project 4}
+		
+		
+		\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Project 4\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+             
+             
    
    		
     
