@@ -10,6 +10,11 @@ Disclaimer: If revisions need to be made to the slides, they will be made. As su
 * Week 1 - Introduction to the course materials, guidelines, and structure
 * Week 2 - Logic gates, boolean logic circuits, functional completeness
 * Week 3 - Half Adders, Full Adders, Encoders, Decoders
+* Week 4
+* Week 5
+* Week 6
+* Week 8
+* Week 10
 
 ## Miscellaneous material
 
