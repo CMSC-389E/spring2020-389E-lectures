@@ -495,9 +495,341 @@
 
     		}
     	\end{frame}
-
-       
+    	
+    \section{Building a Program Counter}
+    	
+    	\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Building the Program Counter\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
              
+        \subsection{Brainstorm}
+    	
+    	\begin{frame}
+    		\frametitle{Realizing our Plans}
+    		\begin{itemize}
+    			\item Now we know exactly what to build, so let's brainstorm how we'd put something like this together
+    			\item Similar to last week, it's important to note that we now \textbf{have all the conceptual knowledge we need} to get this done
+    			\item The question then becomes:
+    			\begin{itemize}
+    				\item How can we leverage the circuits we already know how to make in order to put together a counting circuit?
+    			\end{itemize}
+    		\end{itemize}
+    	\end{frame}
+
+
+		\begin{frame}
+			\frametitle{Realizing Our Plans}
+			\begin{itemize}
+				\item Let's think of all the components we've learned about so far.\newline\newline
+			\end{itemize}
+			{
+			\centering
+			
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (134,105.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {multiplexer};
+% Text Node
+\draw (216,71.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {demultiplexer};
+% Text Node
+\draw (90.67,162.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {decoder};
+% Text Node
+\draw (286,105.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {adder};
+% Text Node
+\draw (176,139) node [anchor=north west][inner sep=0.75pt]   [align=left] {encoder};
+% Text Node
+\draw (92,44.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {latches/flip flops};
+% Text Node
+\draw (286.67,159) node [anchor=north west][inner sep=0.75pt]   [align=left] {multiplier};
+% Text Node
+\draw (296,39) node [anchor=north west][inner sep=0.75pt]   [align=left] {logic gates};
+
+
+\end{tikzpicture}
+
+			}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Realizing Our Plans}
+			\begin{itemize}
+				\item Now, understand that we need to build a circuit that \textbf{stores} a number, then repeatedly \textbf{adds} 1 to it. (It also needs to be able to add and subtract arbitrary values to that stored number)
+				\item \textit{Do any of these look like they'd be useful in that case?}
+			\end{itemize}
+			
+			{
+			\centering
+			
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (134,105.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {multiplexer};
+% Text Node
+\draw (216,71.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {demultiplexer};
+% Text Node
+\draw (90.67,162.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {decoder};
+% Text Node
+\draw (286,105.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {adder};
+% Text Node
+\draw (176,139) node [anchor=north west][inner sep=0.75pt]   [align=left] {encoder};
+% Text Node
+\draw (92,44.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {latches/flip flops};
+% Text Node
+\draw (286.67,159) node [anchor=north west][inner sep=0.75pt]   [align=left] {multiplier};
+% Text Node
+\draw (296,39) node [anchor=north west][inner sep=0.75pt]   [align=left] {logic gates};
+
+
+\end{tikzpicture}
+
+			}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Realizing Our Plans}
+			\begin{itemize}
+				\item Now, understand that we need to build a circuit that \textbf{stores} a number, then repeatedly \textbf{adds} 1 to it. (It also needs to be able to add and subtract arbitrary values to that stored number)
+				\item \textit{Do any of these look like they'd be useful in that case?}
+			\end{itemize}
+			
+			{
+			\centering
+			
+			
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (134,105.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {multiplexer};
+% Text Node
+\draw (216,71.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {demultiplexer};
+% Text Node
+\draw (90.67,162.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {decoder};
+% Text Node
+\draw (286,105.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor[rgb]{0.82,0.01,0.11}{adder}};
+% Text Node
+\draw (176,139) node [anchor=north west][inner sep=0.75pt]   [align=left] {encoder};
+% Text Node
+\draw (92.67,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor[rgb]{0.82,0.01,0.11}{latches/flip flops}};
+% Text Node
+\draw (286.67,159) node [anchor=north west][inner sep=0.75pt]   [align=left] {multiplier};
+% Text Node
+\draw (296,39) node [anchor=north west][inner sep=0.75pt]   [align=left] {logic gates};
+
+
+\end{tikzpicture}
+
+
+			}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Realizing Our Plans}
+			\begin{itemize}
+				\item It turns out, in order to implement our program counter, all we really need is a clever combination of an \textbf{adder} and \textbf{latches/flip-flops} (in other words, memory).
+			\end{itemize}
+		\end{frame}
+		
+		\subsection{Design Choice- Latches/Flip Flops}
+		
+		\begin{frame}
+			\frametitle{Why Latches?}
+			\begin{itemize}
+				\item First and foremost, we need to keep track of what line we want to be pulling from
+				\item At the end of the day, we need to \textbf{store} a value of the current line we're at, so we can feed this value into the ROM (see previous slides)
+				\item If you'll think back to the Memory lecture, you'll know that there's an obvious choice for us in terms of storing memory in our circuits
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Why Latches?}
+			\begin{itemize}
+				\item You may be tempted to recall that latches can only store a single bit's worth of state- \texttt{1} or \texttt{0}
+				\item However, remember that our ROM needs input in binary
+				\item Thanks to the ROM's binary input requirement, our solution can be just as simple as storing 3 latches worth of data!
+				\item That way, when it's needed, we can just send the values of these 3 latches down to the ROM in order to request a line
+			\end{itemize}
+		\end{frame}
+		
+		\subsection{Design Choice- Adder}
+		
+		\begin{frame}
+			\frametitle{Why an Adder?}
+			\begin{itemize}
+				\item Ok, we've figured out how we're \textbf{storing} a number, now how would we increment it?
+				\item Adders are an excellent choice for one reason- and to explore this reason, answer the simple question:
+				\begin{itemize}
+					\item \textbf{Q:} What do we intend to do regarding the ROM at the start of every cycle?
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+       
+       
+       \begin{frame}
+			\frametitle{Why an Adder?}
+			\begin{itemize}
+				\item Adders are an excellent choice for one reason- and to explore this reason, answer the simple question:
+				\begin{itemize}
+					\item \textbf{Q:} What do we intend to do regarding the ROM at the start of every cycle?
+					\item \textbf{A:} We intend to \textbf{add 1} to the program counter.
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+             
+             
+        \begin{frame}
+			\frametitle{Why an Adder?}
+			\begin{itemize}
+				\item Adders are an excellent choice for one reason- and to explore this reason, answer the simple question:
+				\begin{itemize}
+					\item \textbf{Q:} What do we intend to do regarding the ROM at the start of every cycle?
+					\item \textbf{A:} We intend to \textbf{add 1} to the program counter.
+				\end{itemize}
+				\item You might be tempted to ask, aren't there simpler ways of adding 1 to our number stored in memory?
+			\end{itemize}
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Why an Adder?}
+			\begin{itemize}
+				\item Adders are an excellent choice for one reason- and to explore this reason, answer the simple question:
+				\begin{itemize}
+					\item \textbf{Q:} What do we intend to do regarding the ROM at the start of every cycle?
+					\item \textbf{A:} We intend to \textbf{add 1} to the program counter.
+				\end{itemize}
+				\item You might be tempted to ask, aren't there simpler ways of adding 1 to our number stored in memory?
+				\begin{itemize}
+					\item The answer: certainly! But remember, we don't \textbf{just} want to be able to add 1
+				\end{itemize}
+			\end{itemize}
+		\end{frame}
+		
+		
+		\begin{frame}
+			\frametitle{Why an Adder?}
+			
+			{
+			\centering
+			
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+% Text Node
+\draw (122,140) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\Huge {\fontfamily{pcr}\selectfont BRANCHEQ}}};
+
+
+\end{tikzpicture}
+
+			}
+			
+			\begin{itemize}
+				\item The above call is known as a Branch statement
+				\item Let's examine its core functionality
+				\item All it really is asking us to do is \textbf{increment} or \textbf{decrement} the \textbf{program counter} by an arbitrary amount
+				\item In order to support this functionality, we're going to leverage an adder (with a built in subtract flag!)
+			\end{itemize}
+		\end{frame}
+		
+		\subsection{Bringing it All Together}
+		
+		\begin{frame}
+			\frametitle{Bringing It All Together}
+			\begin{itemize}
+			
+				\item Now all we need to do is combine the two, in a meaningful way
+				\item Let's use the Latch setup to store our PC variable, and let's hook up an adder to it in order to allow us to add and subtract arbitrary amounts
+			\end{itemize}
+		\end{frame}
+		
+		\subsection{Aside: Ripple Counters}
+	
+		\begin{frame}
+			\frametitle{Ripple Counters}
+			\begin{itemize}
+				\item Here's another way to create a counter, based on only JK-latches
+				\item \textbf{https://www.falstad.com/circuit/e-counter.html}
+				\item By 'chaining' these latches together, it allows us to pulse them separately and increment them one by one
+				\item \includegraphics[width=0.8\textwidth]{ripplectr}
+				
+			\end{itemize}
+			
+		\end{frame}
+		
+	\section{Overview + Nuances}
+		
+		\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Overview + Nuances\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+             
+             
+        \begin{frame}
+        	\frametitle{Key Takeaways}
+        	\begin{itemize}
+        		\item The Program Counter is how we tell which line we're at, and we need to output this line in binary (for the ROM)
+        		\begin{itemize}
+        			\item Fun fact: there is literally a register in many Assembly implementations that stores this value (usually called PC)
+        		\end{itemize}
+        		\item We're building this using \textbf{latches} and an \textbf{adder}
+        		\item Now, we'll be able to
+        		\begin{itemize}
+        			\item Store the value of the line we're at
+        			\item Increment this value by 1 every cycle
+        			\item Increment or decrement by arbitrary values for \texttt{BRANCH} statements (Jump statements)
+        		\end{itemize}
+        	\end{itemize}
+        \end{frame}
+		
+	
+	\section{Demo}
+	
+	
+		\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Demo\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+             
+             
+         \begin{frame}
+         	\frametitle{Building this in Minecraft}
+         	\begin{itemize}
+         		\item We're essentially looking at an adder, retrofitted with latches and locking mechanisms to facilitate storage of a value
+         		\item Now, let's take a look at a demo in MC that I've color coded- this should give you a better understanding of what we're looking to build
+         		\item Keep in mind that in our Minecraft implementation, the latches and adder are a little entangled, but we're still looking to accomplish the same basic tasks
+         	\end{itemize}
+         \end{frame}
+		
             
         
    	
