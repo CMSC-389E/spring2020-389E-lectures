@@ -1,0 +1,99 @@
+\documentclass{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{spruce}
+\usepackage{circuitikz}
+\usepackage{graphicx}
+\usepackage{verbatim}
+
+\title{RAM}
+\subtitle{Really Awesome Memory}
+\author[CMSC389E]{Akilesh Praveen | CMSC398E}
+\institute{UMD}
+\date{\today}
+
+\begin{document}
+
+    % title page
+    \begin{frame}
+        \titlepage
+    \end{frame}
+    
+    % table of contents
+    \begin{frame}
+        \frametitle{Agenda}
+        \tableofcontents
+    \end{frame}
+    
+    \section{Announcements}
+    
+        \begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Announcements\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+        \subsection{Projects 5, 6, and 7}
+        
+            
+            
+            \begin{frame}
+                \frametitle{Projects 5, 6, 7}
+                \begin{itemize}
+                    \item Projects 5, 6, and 7 are now released on Piazza
+                    \item Relevant instructional material is/will be linked
+                    \item They can be done in \textbf{any order}, but I would suggest doing them in order (5, then 6, then 7)
+                    \item We already did a lecture on Project 5 and 6, today we'll be talking about \textbf{Project 7}
+                    
+                \end{itemize}
+            \end{frame}
+            
+            
+    \section{Intro + Background}
+    
+    	\begin{frame}
+                \vfill
+                \centering
+                \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+                    \usebeamerfont{title}Intro\par%
+                \end{beamercolorbox}
+                \vfill
+             \end{frame}
+    
+    		\begin{frame}
+    			\frametitle{Intro}
+    			\begin{itemize}
+    				\item We've built the ALU; the brains of the operation
+    				\item Now we need a few more things to take this from just a calculator circuit to an actual computer
+    				\begin{itemize}
+    					\item Ways to \textbf{store} programs
+    					\item Ways to \textbf{interpret} those programs
+    					\item Ways to \textbf{execute} those programs
+    					\item Ways to \textbf{store data} for those programs while they're executing
+    				\end{itemize}
+    				\item We're going to use the digital logic circuit theory to build circuits to address all of these! (Projects 5, 6, and 7)
+    			\end{itemize}
+    		\end{frame}
+    		
+    		\begin{frame}
+    			\frametitle{Intro}
+    			
+    				\begin{itemize}
+    					\item Ways to \textbf{store} programs - \textbf{ROM} \textit{(Project 5)}
+    					\item Ways to \textbf{interpret} those programs - \textbf{389E Assembly} \textit{(Project 5)}
+    					\item Ways to \textbf{execute} those programs - \textbf{Program Counter} \textit{(Project 6)}
+    					\item Ways to \textbf{store data} for those programs while they're executing - \textbf{RAM} \textit{(Project 7)}
+    					\item Today, we'll be talking about ways to store data for these programs, using registers of \textbf{RAM}.
+    				\end{itemize}
+    				
+    			
+    		\end{frame}
+    		
+    		
+		
+            
+        
+   	
+\end{document}
